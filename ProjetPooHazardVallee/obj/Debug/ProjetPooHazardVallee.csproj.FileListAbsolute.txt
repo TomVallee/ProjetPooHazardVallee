@@ -1,1 +1,6 @@
 c:\users\tomva\documents\visual studio 2015\Projects\ProjetPooHazardVallee\ProjetPooHazardVallee\bin\Debug\ProjetPooHazardVallee.exe.config
+c:\users\tomva\documents\visual studio 2015\Projects\ProjetPooHazardVallee\ProjetPooHazardVallee\obj\Debug\ProjetPooHazardVallee.csprojResolveAssemblyReference.cache
+c:\users\tomva\documents\visual studio 2015\Projects\ProjetPooHazardVallee\ProjetPooHazardVallee\bin\Debug\ProjetPooHazardVallee.exe
+c:\users\tomva\documents\visual studio 2015\Projects\ProjetPooHazardVallee\ProjetPooHazardVallee\bin\Debug\ProjetPooHazardVallee.pdb
+c:\users\tomva\documents\visual studio 2015\Projects\ProjetPooHazardVallee\ProjetPooHazardVallee\obj\Debug\ProjetPooHazardVallee.exe
+c:\users\tomva\documents\visual studio 2015\Projects\ProjetPooHazardVallee\ProjetPooHazardVallee\obj\Debug\ProjetPooHazardVallee.pdb
