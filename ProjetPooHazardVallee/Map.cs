@@ -55,30 +55,15 @@ namespace ProjetPooHazardVallee
         {
             _cases[numCase].changerType(type);
         }
-        public int LireCase(int numCase)
+        public void ChangerCase(int numCase, int type, int idEvenement)
         {
-            return _cases[numCase].AfficherType();
+            _cases[numCase].changerType(type);
+            _cases[numCase].IdEvenement = idEvenement;
         }
-
-
-        //ajouter éléments (attention à la taille)
-        public void AjouterMaison(int numCase)
+        public Case LireCase(int numCase)
         {
-            for (int k = 0; k < 3; k++)
-            {
-                ChangerCase(numCase + k, 107 + k);
-            }
-            for (int k = 0; k < 3; k++)
-            {
-                ChangerCase(numCase + Taille + 2 + k, 104 + k);
-            }
-            for (int k = 0; k < 3; k++)
-            {
-                ChangerCase(numCase + (Taille + 2) * 2 + k, 101 + k);
-            }
-
+            return _cases[numCase];
         }
-
 
         //afficher la map
         public void AfficherMap()
@@ -89,6 +74,37 @@ namespace ProjetPooHazardVallee
                 c.afficherCase();
             }
         }
+
+
+
+
+        //ajouter éléments (attention à la taille)
+        public void AjouterMaison(int numCase)
+        {
+            for (int k = 0; k < 3; k++)
+            {
+                ChangerCase(numCase + k, 111 + k);
+            }
+            for (int k = 0; k < 3; k++)
+            {
+                ChangerCase(numCase + k + Taille + 2, 107 + k);
+            }
+            for (int k = 0; k < 3; k++)
+            {
+                ChangerCase(numCase + (Taille + 2) * 2 + k, 104 + k);
+            }
+            for (int k = 0; k < 3; k++)
+            {
+                ChangerCase(numCase + (Taille + 2) * 3 + k, 101 + k);
+            }
+
+        }
+        public void AjouterPorte(int numCase,int idEvenement, int typePorte)
+        {
+            ChangerCase(numCase, typePorte, idEvenement);
+        }
+
     }
+        
 
 }

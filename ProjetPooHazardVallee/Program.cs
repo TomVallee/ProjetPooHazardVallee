@@ -11,6 +11,8 @@ namespace ProjetPooHazardVallee
         static void Main(string[] args)
         {
             Deroulement();
+            
+            
         }
         public static void Deroulement()
         {
@@ -19,7 +21,7 @@ namespace ProjetPooHazardVallee
             heros.AfficherHeros();
             while (5 < 6)
             {
-                heros.DeplacerHeros();
+                heros.CommanderHeros();
             }
 
         }

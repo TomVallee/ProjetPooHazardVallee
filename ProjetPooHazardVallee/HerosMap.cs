@@ -22,50 +22,58 @@ namespace ProjetPooHazardVallee
 
         public void AfficherHeros()
         {
-            _typeCasePrec = world.LireCase(_numCase);
+            _typeCasePrec = world.LireCase(_numCase).AfficherType(); ;
             world.ChangerCase(_numCase, 2000);
             world.AfficherMap();
         }
-        public void DeplacerHeros()
+        public void CommanderHeros()
         {
             string dir = "";
             do
             {
+                world.AfficherMap();
                 Console.WriteLine("Entrez direction ZQSD");
-                dir = Console.ReadLine();
+                dir = Console.ReadKey().KeyChar.ToString();
             }
             while (dir != "z" && dir != "q" && dir != "s" && dir != "d");
-            int futureCase = 0;
+            int numFutureCase = 0;
             if (dir == "z")
             {
-                futureCase = _numCase - world.Taille - 2;
+                numFutureCase = _numCase - world.Taille - 2;
 
             }
             else if (dir == "q")
             {
-                futureCase = _numCase - 1;
+                numFutureCase = _numCase - 1;
 
             }
             else if (dir == "s")
             {
-                futureCase = _numCase + world.Taille + 2;
+                numFutureCase = _numCase + world.Taille + 2;
 
             }
             else if (dir == "d")
             {
-                futureCase = _numCase + 1;
+                numFutureCase = _numCase + 1;
             }
-            if (world.LireCase(futureCase) > 999)
+            Case futureCase = world.LireCase(numFutureCase);
+            if (futureCase.AfficherType() > 999)
             {
                 world.ChangerCase(_numCase, _typeCasePrec);
-                _numCase = futureCase;
+                _numCase = numFutureCase;
                 AfficherHeros();
             }
             else
             {
                 world.AfficherMap();
-                Console.WriteLine("Vous ne pouvez pas aller par là");
+                Case.EvenementCase(futureCase,this);
             }
+        }
+        public void ChangerMap(Map nouveauMonde, int caseDépart)
+        {
+            _typeCasePrec = 0;
+            _numCase = caseDépart;
+            world = nouveauMonde;
         }
     }
 }

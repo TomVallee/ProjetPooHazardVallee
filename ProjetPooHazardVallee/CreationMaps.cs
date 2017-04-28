@@ -38,8 +38,37 @@ namespace ProjetPooHazardVallee
             test.AfficherMap();
             Console.ReadLine();
             test.AjouterMaison(50);
+            test.AjouterPorte(500,1,601);
             test.AfficherMap();
             return test;
+        }
+        public static Map Prairie(int longueur, int hauteur)
+        {
+            Map prairie = new Map(3, longueur);
+            prairie.AjouterCase(7);
+            for (int k = 0; k < longueur; k++)
+            {
+                prairie.AjouterCase(8);
+            }
+            prairie.AjouterCase(9);
+            for (int k = 0; k < hauteur; k++)
+            {
+                prairie.AjouterCase(4);
+                for (int j = 0; j < longueur; j++)
+                {
+                    prairie.AjouterCase(1000);
+                }
+                prairie.AjouterCase(6);
+            }
+            prairie.AjouterCase(1);
+            for (int k = 0; k < longueur; k++)
+            {
+                prairie.AjouterCase(2);
+            }
+            prairie.AjouterCase(3);
+            prairie.AjouterMaison((longueur+2)*(hauteur+2)/2);
+            prairie.AfficherMap();
+            return prairie;
         }
     }
 }
